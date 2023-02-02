@@ -92,7 +92,7 @@ forward(atomic_number: Tensor, edge_index: Tensor, angle_index: Tensor, distance
 ## EGNN
 [Paper](https://arxiv.org/abs/2102.09844)
 
-EGNN introduces an architecture that is equivariant to translation, rotation, and relection. For each message passing layer, the invariant message is constructed using invariant features (node features, edge attributes) and the scalarization of geometric vectors ($\mathbf{x}_i, \mathbf{x}_j \rightarrow$ distance $||\mathbf{x}_i - \mathbf{x}_j||^2$) (since scalars are invariant). Then geometric vectors are updated in the equivariant flavor (weighted sum of all relative differences) while node features are updated by aggregating messages. 
+EGNN introduces an architecture that is equivariant to translation, rotation, and relection. For each message passing layer, the invariant message is constructed using invariant features (node features, edge attributes) and the scalarization of geometric vectors ( $\mathbf{x}_i, \mathbf{x}_j \rightarrow$ distance $|| \mathbf{x}_i - \mathbf{x}_j ||^2$ ) (since scalars are invariant). Then geometric vectors are updated in the equivariant flavor (weighted sum of all relative differences) while node features are updated by aggregating messages. 
 
 ```python
 class EquivariantGraphConvolutionalLayer(in_dim: int, hidden_dim: int, swish_beta: float, velocity: bool = False)
